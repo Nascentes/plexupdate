@@ -27,6 +27,8 @@ export tgram_chatid="555555"
 
 With your own values. If you don't know how to do this, there are many guides available, but the gist is that you need to create a Telegram Bot (keyword to search: [telegram botfather](https://core.telegram.org/bots)) & then use an existing [userinfobot](https://telegram.me/userinfobot) to get YOUR chat id. Your notifications will come in from your newly created bot. (tip: these same values can be given to Radarr/Sonarr/Ombi/others that support native Telegram notification and you can see all your Plex shenanigans in the same chat)
 
+Alternatively, you can use Synology's built-in notification system to send to Telegram and the script will support that too without any changes. 
+
 ### Download Script
 SSH in to the NAS and download this script, via a command like `sudo wget https://github.com/Nascentes/plexupdate/raw/master/plexupdate.sh`
 Or just download it to you local machine and copy it into a preferred location on you Synology.
