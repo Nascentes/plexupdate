@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 echo "===== START: $(date) ====="
-. .tgram || true
+. ./.tgram || true
 
 # Script to Auto Update Plex on Synology NAS
 # Must be run as root.
@@ -42,7 +42,7 @@ if [[ $CURRENT_VERSION > $INSTALLED_VERSION ]] ; then
   echo "PLEX Server restarting."
   /usr/syno/bin/synopkg start "Plex Media Server"
   if [[ ! -z "${tgram_bot}" ]]; then
-    curl -s -X POST https://api.telegram.org/bot${tgram_bot}/sendMessage -d chat_id=${tgram_chatid} -d text="Plex upgraded to version: ${newversion}"
+    curl -s -X POST https://api.telegram.org/bot${tgram_bot}/sendMessage -d chat_id=${tgram_chatid} -d text="Plex upgraded to version: ${CURRENT_VERSION}"
   fi
 else
   echo "PLEX is currently up to date."
